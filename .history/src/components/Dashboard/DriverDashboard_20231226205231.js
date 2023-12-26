@@ -1,9 +1,11 @@
 // src/components/Dashboard/DriverDashboard.js
 import React from 'react';
 import DriverAppBar from '../DriverAppBar';
+import { useNavigate } from 'react-router-dom';
 import { Box, Typography, Paper, Container } from '@mui/material';
 
 const DriverDashboard = () => {
+  const navigate = useNavigate();
 
   return (
     <>

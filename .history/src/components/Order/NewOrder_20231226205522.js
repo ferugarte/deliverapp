@@ -35,11 +35,7 @@ const NewOrder = () => {
     if (minAssignedDriver.id) {
       // Crear el nuevo pedido con el conductor asignado
       const orderData = { ...newOrderData, assignedDriverId: minAssignedDriver.id };
-      try{
-        await addDoc(collection(firestore, 'orders'), orderData);
-      }catch(e){
-        console.log("Error");
-      }
+      await addDoc(collection(firestore, 'orders'), orderData);
 
       // Incrementar el conteo de pedidos asignados del conductor
       const driverDocRef = doc(firestore, 'users', minAssignedDriver.id);
