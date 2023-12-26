@@ -23,7 +23,7 @@ const OrderList = () => {
 
       return () => unsubscribe();
     }
-  }, [user, firestore]);
+  }, [user]);
 
   const handleRowClick = (orderId) => {
     navigate(`/order/details/${orderId}`);

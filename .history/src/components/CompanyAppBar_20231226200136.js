@@ -1,14 +1,16 @@
-// src/components/DriverAppBar.js
+// src/components/CompanyAppBar.js
 import React, { useState } from 'react';
 import { AppBar, Toolbar, IconButton, Typography, Drawer, List, ListItem, ListItemText, Button, useTheme, useMediaQuery } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { getAuth, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
-const DriverAppBar = () => {
+const CompanyAppBar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const navigate = useNavigate();
+  const auth = getAuth();
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
@@ -20,8 +22,9 @@ const DriverAppBar = () => {
   };
 
   const menuItems = [
-    { text: 'Cambiar Estado', path: '/driver/status' },
-    { text: 'Cerrar Sesión', path: '/logout' } // Implementa la lógica de cierre de sesión
+    { text: 'Crear Nuevo Pedido', path: '/order/new' },
+    { text: 'Lista de Pedidos', path: '/orders' },
+    { text: 'Cerrar Sesión', path: '/logout' } // Asegúrate de implementar la lógica de cierre de sesión
   ];
 
   return (
@@ -42,10 +45,8 @@ const DriverAppBar = () => {
             DeliverApp //
           </Typography>
           {!isMobile && menuItems.map((item, index) => (
-            <Button key={index} 
-                color="inherit" 
-                onClick={() => handleNavigation(item.path)}                
-                style={item.text === 'Cerrar Sesión' ? { background: 'red' } : {}}>
+            <Button key={index} color="inherit" onClick={() => handleNavigation(item.path)}                
+            style={item.text === 'Cerrar Sesión' ? { background: 'red' } : {}}>
               {item.text}
             </Button>
           ))}
@@ -64,4 +65,4 @@ const DriverAppBar = () => {
   );
 };
 
-export default DriverAppBar;
+export default CompanyAppBar;

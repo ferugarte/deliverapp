@@ -99,7 +99,7 @@ const OrderDetails = () => {
                     <Button variant="contained" color="primary" onClick={handleEdit} style={{ marginTop: '20px' }}>
                       Editar Pedido
                     </Button>
-                    <Button variant="outlined" color="secondary" onClick={handleBackToList} style={{ marginTop: '20px' }}>
+                    <Button variant="outlined" color="secondary" onClick={handleBackToList} style={{ marginTop: '20px', marginLeft: '20px' }}>
                       Volver a la Lista
                     </Button>
                   </Box>
@@ -108,7 +108,7 @@ const OrderDetails = () => {
                 <Typography variant="body1">Cargando detalles del pedido...</Typography>
               )}
             </Box>
-                
+
             <Button 
               variant="contained" 
               color="secondary" 

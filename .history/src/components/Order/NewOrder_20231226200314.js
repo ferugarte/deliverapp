@@ -15,6 +15,7 @@ const NewOrder = () => {
   const [error, setError] = useState('');
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const navigate = useNavigate();
+  const auth = getAuth();
   const firestore = getFirestore();
 
   const assignOrderToDriver = async (newOrderData) => {

@@ -82,7 +82,7 @@ const OrderDetails = () => {
                   <Typography variant="body1"><b>Hora de Inicio:</b> {order.startTime}</Typography>
                   <Typography variant="body1"><b>Hora de Fin:</b> {order.endTime}</Typography>
                   {driver && (
-                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
+                    <div>
                       <Typography variant="body1"><b>Conductor Asignado:</b> {driver.displayName}</Typography>
                       <Button
                         variant="contained"
@@ -92,23 +92,21 @@ const OrderDetails = () => {
                       >
                         Ver Detalles del Conductor
                       </Button>
-                      </Box>
+                    </div>
                   )}
                   {/* Agrega más detalles si es necesario */}
-                  <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                    <Button variant="contained" color="primary" onClick={handleEdit} style={{ marginTop: '20px' }}>
-                      Editar Pedido
-                    </Button>
-                    <Button variant="outlined" color="secondary" onClick={handleBackToList} style={{ marginTop: '20px' }}>
-                      Volver a la Lista
-                    </Button>
-                  </Box>
+                  <Button variant="contained" color="primary" onClick={handleEdit} style={{ marginTop: '20px' }}>
+                    Editar Pedido
+                  </Button>
+                  <Button variant="outlined" color="secondary" onClick={handleBackToList} style={{ marginTop: '20px', marginLeft: '20px' }}>
+                    Volver a la Lista
+                  </Button>
                 </div>
               ) : (
                 <Typography variant="body1">Cargando detalles del pedido...</Typography>
               )}
             </Box>
-                
+
             <Button 
               variant="contained" 
               color="secondary" 
@@ -123,20 +121,20 @@ const OrderDetails = () => {
               open={openConfirmDialog}
               onClose={() => setOpenConfirmDialog(false)}
             >
-              <DialogTitle>Confirmar Borrado</DialogTitle>
-              <DialogContent>
-                <DialogContentText>
-                  ¿Estás seguro de que quieres borrar este pedido? Esta acción no se puede deshacer.
-                </DialogContentText>
-              </DialogContent>
-              <DialogActions>
-                <Button onClick={() => setOpenConfirmDialog(false)} color="primary">
-                  Cancelar
-                </Button>
-                <Button onClick={handleDeleteOrder} color="secondary">
-                  Borrar
-                </Button>
-              </DialogActions>
+            <DialogTitle>Confirmar Borrado</DialogTitle>
+            <DialogContent>
+              <DialogContentText>
+                ¿Estás seguro de que quieres borrar este pedido? Esta acción no se puede deshacer.
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={() => setOpenConfirmDialog(false)} color="primary">
+                Cancelar
+              </Button>
+              <Button onClick={handleDeleteOrder} color="secondary">
+                Borrar
+              </Button>
+            </DialogActions>
             </Dialog>
             </Paper>
         </Box>

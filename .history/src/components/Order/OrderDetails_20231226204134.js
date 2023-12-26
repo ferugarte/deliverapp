@@ -95,20 +95,18 @@ const OrderDetails = () => {
                       </Box>
                   )}
                   {/* Agrega más detalles si es necesario */}
-                  <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                    <Button variant="contained" color="primary" onClick={handleEdit} style={{ marginTop: '20px' }}>
-                      Editar Pedido
-                    </Button>
-                    <Button variant="outlined" color="secondary" onClick={handleBackToList} style={{ marginTop: '20px' }}>
-                      Volver a la Lista
-                    </Button>
-                  </Box>
+                  <Button variant="contained" color="primary" onClick={handleEdit} style={{ marginTop: '20px' }}>
+                    Editar Pedido
+                  </Button>
+                  <Button variant="outlined" color="secondary" onClick={handleBackToList} style={{ marginTop: '20px', marginLeft: '20px' }}>
+                    Volver a la Lista
+                  </Button>
                 </div>
               ) : (
                 <Typography variant="body1">Cargando detalles del pedido...</Typography>
               )}
             </Box>
-                
+
             <Button 
               variant="contained" 
               color="secondary" 

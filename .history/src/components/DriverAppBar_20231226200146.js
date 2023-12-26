@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, IconButton, Typography, Drawer, List, ListItem, ListItemText, Button, useTheme, useMediaQuery } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { getAuth, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
 const DriverAppBar = () => {
@@ -9,6 +10,7 @@ const DriverAppBar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const navigate = useNavigate();
+  const auth = getAuth();
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
