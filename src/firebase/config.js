@@ -6,13 +6,13 @@ import { getStorage } from 'firebase/storage';
 
 // Configuración de Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyAfNqnGX9jnsCuIXugoWL9mR_E1YnLALCE",
-  authDomain: "deliverapp-1fc04.firebaseapp.com",
-  projectId: "deliverapp-1fc04",
-  storageBucket: "deliverapp-1fc04.appspot.com",
-  messagingSenderId: "341484835756",
-  appId: "1:341484835756:web:c15c49beca6d51e581a009",
-  measurementId: "G-FSL64LZYFP"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: ""
 };
 
 // Inicializa Firebase
